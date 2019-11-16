@@ -32,16 +32,28 @@ def create_parser():
 def preprocessing_data(x_train, y_train, x_test, y_test):
     y_train_cat = to_categorical(y_train)
     y_test_cat = to_categorical(y_test)
+    x_train = x_train.reshape((50000, 32 * 32 * 3))
+    x_test = x_test.reshape((10000, 32 * 32 * 3))
     x_train_cat = x_train.astype('float32') / 255
     x_test_cat = x_test.astype('float32') / 255
     return (x_train_cat, y_train_cat), (x_test_cat, y_test_cat)
 
 
-def run(hidden_size=10000, batch_size=128, rate=0.1, epochs=20):
+def run(hidden_size=1284, batch_size=128, rate=0.1, epochs=15):
     (x_train, y_train), (x_test, y_test) = cifar10.load_data()
     (x_train, y_train), (x_test, y_test) = preprocessing_data(x_train, y_train, x_test, y_test)
-    # todo: use keras NN model here
-    return
+    network = models.Sequential()
+    network.add(layers.Dense(hidden_size, activation='relu',kernel_initializer='he_normal', input_shape=(32 * 32 * 3,)))
+    network.add(layers.Dense(10, activation='softmax'))
+    optimizer = optimizers.SGD(rate)
+    network.compile(optimizer='adam',
+                    loss='categorical_crossentropy',
+                    metrics=['accuracy'])
+    network.fit(x_train, y_train, epochs=epochs, batch_size=batch_size, shuffle=True, verbose=2)
+    train_result = network.evaluate(x_train, y_train)
+    test_result = network.evaluate(x_test, y_test)
+
+    return train_result, test_result
 
 
 def main(args):
@@ -49,6 +61,8 @@ def main(args):
 
 
 if __name__ == '__main__':
-    parser = create_parser()
-    main(parser.parse_args())
+    # parser = create_parser()
+    # main(parser.parse_args())
+    print(run())
+
 
