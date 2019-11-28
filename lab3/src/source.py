@@ -8,7 +8,7 @@
 from argparse import ArgumentParser
 from keras import models, Sequential
 from keras import layers
-from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
+from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout, LeakyReLU
 from keras.optimizers import SGD
 from keras.utils import to_categorical
 from keras.datasets import cifar10
@@ -66,10 +66,14 @@ def fit_and_run(hidden_size=300, batch_size=128, rate=0.1, epochs=20):
                      kernel_initializer='he_uniform', padding='same', input_shape=(32, 32, 3)))
     network.add(Conv2D(32, (3, 3), activation='relu', kernel_initializer='he_uniform', padding='same'))
     network.add(MaxPooling2D((2, 2)))
+    network.add(Conv2D(64, (3, 3), activation='relu', kernel_initializer='he_uniform', padding='same'))
+    network.add(Conv2D(64, (3, 3), activation='relu', kernel_initializer='he_uniform', padding='same'))
+    network.add(MaxPooling2D((2, 2)))
+    network.add(Dropout(0.25))
     network.add(Flatten())
     network.add(Dense(128, activation='relu', kernel_initializer='he_uniform'))
     network.add(Dense(10, activation='softmax'))
-    optimizer = SGD(lr=0.001, momentum=0.9)
+    optimizer = SGD(lr=0.1, decay=1e-2/epochs)
     network.compile(optimizer=optimizer, loss='categorical_crossentropy', metrics=['accuracy'])
     network.fit(x_train, y_train, validation_data=(x_test, y_test), epochs=epochs,
                 batch_size=batch_size, verbose=2)
