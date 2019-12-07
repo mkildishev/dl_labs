@@ -20,8 +20,8 @@ def create_parser():
     parser = ArgumentParser()
     parser.add_argument('--mode', type=str, choices=['load', 'fit'], default='fit',
                         help='Choosing work mode')
-    parser.add_argument('--hidden_num', type=int,  default=300,
-                        help='Hidden layer nodes num')
+    parser.add_argument('--model', type=str,  default='3',
+                        help='Model type')
     parser.add_argument('--batch_size', type=int, default=128,
                         help='Sample batch size')
     parser.add_argument('--rate', type=float, default=0.1,
@@ -29,6 +29,30 @@ def create_parser():
     parser.add_argument('--epochs', type=int, default=20,
                         help='Epochs count')
     return parser
+
+
+def first_model():
+    network = models.Sequential()
+    network.add(layers.Dense(300, activation='relu', input_shape=(32 * 32 * 3,), kernel_initializer='he_normal'))
+    network.add(layers.Dense(10,  activation='softmax'))
+    return network
+
+
+def second_model():
+    network = models.Sequential()
+    network.add(BatchNormalization())
+    network.add(layers.Dense(300, activation='relu', kernel_initializer='he_normal'))
+    network.add(layers.Dense(10,  activation='softmax'))
+    return network
+
+
+def third_model():
+    network = models.Sequential()
+    network.add(BatchNormalization())
+    network.add(layers.Dense(300, activation='relu', kernel_initializer='he_normal'))
+    network.add(layers.Dense(128, activation='relu', kernel_initializer='he_normal'))
+    network.add(layers.Dense(10,  activation='softmax'))
+    return network
 
 
 def preprocessing_data(x_train, y_train, x_test, y_test):
@@ -41,10 +65,12 @@ def preprocessing_data(x_train, y_train, x_test, y_test):
     return (x_train_cat, y_train_cat), (x_test_cat, y_test_cat)
 
 
-def save_network(network):
-    network.save_weights("model_weights.h5")
+def save_network(network, name):
+    weight_name = '.'.join([name, "h5"])
+    arch_name = '.'.join([name, "json"])
+    network.save_weights(weight_name)
     model_json = network.to_json()
-    with open("model_arch.json", "w") as json_file:
+    with open(arch_name, "w") as json_file:
         json_file.write(model_json)
 
 
@@ -64,21 +90,18 @@ def load_and_run(path_to_model, path_to_weight):
     return score_train, score_test
 
 
-def fit_and_run(hidden_size=300, batch_size=128, rate=0.1, epochs=20):
+def fit_and_run(model=first_model, name="model", batch_size=128, rate=0.1, epochs=20):
     (x_train, y_train), (x_test, y_test) = cifar10.load_data()
     (x_train, y_train), (x_test, y_test) = preprocessing_data(x_train, y_train, x_test, y_test)
-    time_start = datetime.now()
-    network = models.Sequential()
-    network.add(BatchNormalization(input_shape=(32 * 32 * 3,)))
-    network.add(layers.Dense(hidden_size, activation='relu', kernel_initializer='he_normal'))
-    network.add(layers.Dense(10,  activation='softmax'))
+    network = model()
     optimizer = optimizers.SGD(lr=rate, decay=1e-2/epochs)
     network.compile(optimizer=optimizer,
                     loss='categorical_crossentropy',
                     metrics=['accuracy'])
+    time_start = datetime.now()
     network.fit(x_train, y_train, validation_data=(x_test, y_test), epochs=epochs,
                 batch_size=batch_size,  verbose=2)
-    save_network(network)
+    save_network(network, name)
     delta_time = datetime.now() - time_start
     score_train = network.evaluate(x_train, y_train, verbose=0)
     score_test = network.evaluate(x_test, y_test, verbose=0)
@@ -93,12 +116,25 @@ def print_info(time, score_train, score_test):
     print('Train time: ', time)
 
 
+def choose_model(model_num='1'):
+    if model_num == '1':
+        return first_model
+    elif model_num == '2':
+        return second_model
+    else:
+        return third_model
+
+
 def main(args):
     if args.mode == 'fit':
-        time, score_train, score_test = fit_and_run(args.hidden_num, args.batch_size, args.rate, args.epochs)
+        time, score_train, score_test = fit_and_run(choose_model(args.model), args.model, args.batch_size, args.rate, args.epochs)
         print_info(time, score_train, score_test)
     else:
-        score_train, score_test = load_and_run("model_arch.json", "model_weights.h5")
+        dot = '.'
+        model_name = str(args.model)
+        model_arch = dot.join([model_name, "json"])
+        model_weights = dot.join([model_name, "h5"])
+        score_train, score_test = load_and_run(model_arch, model_weights)
         print_info(0.0, score_train, score_test)
 
 
