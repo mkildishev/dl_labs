@@ -1,0 +1,184 @@
+Train on 50000 samples, validate on 10000 samples
+Epoch 1/20
+ - 215s - loss: 1.8857 - accuracy: 0.3207 - val_loss: 1.6659 - val_accuracy: 0.3980
+Epoch 2/20
+ - 227s - loss: 1.5255 - accuracy: 0.4553 - val_loss: 1.4259 - val_accuracy: 0.4823
+Epoch 3/20
+ - 225s - loss: 1.3726 - accuracy: 0.5131 - val_loss: 1.3285 - val_accuracy: 0.5252
+Epoch 4/20
+ - 222s - loss: 1.2806 - accuracy: 0.5475 - val_loss: 1.2441 - val_accuracy: 0.5576
+Epoch 5/20
+ - 223s - loss: 1.2131 - accuracy: 0.5739 - val_loss: 1.1799 - val_accuracy: 0.5848
+Epoch 6/20
+ - 223s - loss: 1.1503 - accuracy: 0.5953 - val_loss: 1.1414 - val_accuracy: 0.5988
+Epoch 7/20
+ - 223s - loss: 1.0914 - accuracy: 0.6174 - val_loss: 1.0837 - val_accuracy: 0.6169
+Epoch 8/20
+ - 223s - loss: 1.0370 - accuracy: 0.6381 - val_loss: 1.0850 - val_accuracy: 0.6123
+Epoch 9/20
+ - 225s - loss: 0.9902 - accuracy: 0.6536 - val_loss: 1.0354 - val_accuracy: 0.6384
+Epoch 10/20
+ - 230s - loss: 0.9437 - accuracy: 0.6717 - val_loss: 1.0045 - val_accuracy: 0.6477
+Epoch 11/20
+ - 225s - loss: 0.9021 - accuracy: 0.6859 - val_loss: 0.9900 - val_accuracy: 0.6584
+Epoch 12/20
+ - 227s - loss: 0.8661 - accuracy: 0.7004 - val_loss: 0.9862 - val_accuracy: 0.6615
+Epoch 13/20
+ - 231s - loss: 0.8333 - accuracy: 0.7117 - val_loss: 0.9333 - val_accuracy: 0.6777
+Epoch 14/20
+ - 235s - loss: 0.7992 - accuracy: 0.7242 - val_loss: 0.9523 - val_accuracy: 0.6730
+Epoch 15/20
+ - 233s - loss: 0.7830 - accuracy: 0.7268 - val_loss: 0.9476 - val_accuracy: 0.6759
+Epoch 16/20
+ - 229s - loss: 0.7410 - accuracy: 0.7448 - val_loss: 0.9322 - val_accuracy: 0.6804
+Epoch 17/20
+ - 221s - loss: 0.7192 - accuracy: 0.7512 - val_loss: 0.9201 - val_accuracy: 0.6932
+Epoch 18/20
+ - 221s - loss: 0.6931 - accuracy: 0.7601 - val_loss: 0.9128 - val_accuracy: 0.6950
+Epoch 19/20
+ - 220s - loss: 0.6599 - accuracy: 0.7748 - val_loss: 0.9386 - val_accuracy: 0.6880
+Epoch 20/20
+ - 221s - loss: 0.6415 - accuracy: 0.7787 - val_loss: 0.8813 - val_accuracy: 0.6969
+Train loss:  0.5797228041267395
+Train accuracy:  0.8051999807357788
+Test loss:  0.8812951495170593
+Test accuracy:  0.6969000101089478
+Train time:  1:14:59.907802
+Train on 50000 samples, validate on 10000 samples
+Epoch 1/20
+ - 220s - loss: 1.8908 - accuracy: 0.3256 - val_loss: 1.6907 - val_accuracy: 0.4067
+Epoch 2/20
+ - 222s - loss: 1.5470 - accuracy: 0.4471 - val_loss: 1.4353 - val_accuracy: 0.4866
+Epoch 3/20
+ - 220s - loss: 1.4123 - accuracy: 0.4958 - val_loss: 1.3608 - val_accuracy: 0.5225
+Epoch 4/20
+ - 221s - loss: 1.3203 - accuracy: 0.5300 - val_loss: 1.3012 - val_accuracy: 0.5423
+Epoch 5/20
+ - 220s - loss: 1.2409 - accuracy: 0.5601 - val_loss: 1.2888 - val_accuracy: 0.5425
+Epoch 6/20
+ - 224s - loss: 1.1798 - accuracy: 0.5822 - val_loss: 1.1943 - val_accuracy: 0.5778
+Epoch 7/20
+ - 223s - loss: 1.1196 - accuracy: 0.6051 - val_loss: 1.1342 - val_accuracy: 0.6008
+Epoch 8/20
+ - 222s - loss: 1.0717 - accuracy: 0.6233 - val_loss: 1.1169 - val_accuracy: 0.6044
+Epoch 9/20
+ - 223s - loss: 1.0213 - accuracy: 0.6423 - val_loss: 1.0788 - val_accuracy: 0.6160
+Epoch 10/20
+ - 223s - loss: 0.9807 - accuracy: 0.6581 - val_loss: 1.0684 - val_accuracy: 0.6233
+Epoch 11/20
+ - 221s - loss: 0.9394 - accuracy: 0.6707 - val_loss: 1.0301 - val_accuracy: 0.6386
+Epoch 12/20
+ - 222s - loss: 0.9008 - accuracy: 0.6863 - val_loss: 1.0283 - val_accuracy: 0.6425
+Epoch 13/20
+ - 222s - loss: 0.8694 - accuracy: 0.6978 - val_loss: 0.9975 - val_accuracy: 0.6529
+Epoch 14/20
+ - 221s - loss: 0.8309 - accuracy: 0.7098 - val_loss: 0.9908 - val_accuracy: 0.6550
+Epoch 15/20
+ - 221s - loss: 0.8061 - accuracy: 0.7212 - val_loss: 0.9889 - val_accuracy: 0.6613
+Epoch 16/20
+ - 222s - loss: 0.7762 - accuracy: 0.7306 - val_loss: 0.9696 - val_accuracy: 0.6663
+Epoch 17/20
+ - 222s - loss: 0.7548 - accuracy: 0.7383 - val_loss: 0.9642 - val_accuracy: 0.6701
+Epoch 18/20
+ - 222s - loss: 0.7145 - accuracy: 0.7524 - val_loss: 0.9728 - val_accuracy: 0.6687
+Epoch 19/20
+ - 221s - loss: 0.6887 - accuracy: 0.7639 - val_loss: 1.0035 - val_accuracy: 0.6615
+Epoch 20/20
+ - 222s - loss: 0.6657 - accuracy: 0.7696 - val_loss: 0.9824 - val_accuracy: 0.6684
+Train loss:  0.6238111812686921
+Train accuracy:  0.7876799702644348
+Test loss:  0.9823577007293701
+Test accuracy:  0.66839998960495
+Train time:  1:13:54.617124
+Train on 50000 samples, validate on 10000 samples
+Epoch 1/20
+ - 223s - loss: 1.8812 - accuracy: 0.3303 - val_loss: 1.6326 - val_accuracy: 0.4168
+Epoch 2/20
+ - 224s - loss: 1.5485 - accuracy: 0.4483 - val_loss: 1.4511 - val_accuracy: 0.4824
+Epoch 3/20
+ - 223s - loss: 1.4072 - accuracy: 0.5018 - val_loss: 1.3364 - val_accuracy: 0.5267
+Epoch 4/20
+ - 224s - loss: 1.2929 - accuracy: 0.5434 - val_loss: 1.2381 - val_accuracy: 0.5567
+Epoch 5/20
+ - 223s - loss: 1.2079 - accuracy: 0.5754 - val_loss: 1.1723 - val_accuracy: 0.5864
+Epoch 6/20
+ - 224s - loss: 1.1325 - accuracy: 0.6021 - val_loss: 1.1612 - val_accuracy: 0.5862
+Epoch 7/20
+ - 223s - loss: 1.0714 - accuracy: 0.6249 - val_loss: 1.0994 - val_accuracy: 0.6136
+Epoch 8/20
+ - 224s - loss: 1.0218 - accuracy: 0.6436 - val_loss: 1.0442 - val_accuracy: 0.6322
+Epoch 9/20
+ - 223s - loss: 0.9728 - accuracy: 0.6621 - val_loss: 1.0296 - val_accuracy: 0.6391
+Epoch 10/20
+ - 224s - loss: 0.9326 - accuracy: 0.6770 - val_loss: 1.0007 - val_accuracy: 0.6493
+Epoch 11/20
+ - 227s - loss: 0.8954 - accuracy: 0.6880 - val_loss: 0.9899 - val_accuracy: 0.6571
+Epoch 12/20
+ - 230s - loss: 0.8592 - accuracy: 0.7032 - val_loss: 0.9696 - val_accuracy: 0.6645
+Epoch 13/20
+ - 226s - loss: 0.8283 - accuracy: 0.7122 - val_loss: 0.9514 - val_accuracy: 0.6706
+Epoch 14/20
+ - 226s - loss: 0.8022 - accuracy: 0.7223 - val_loss: 0.9212 - val_accuracy: 0.6805
+Epoch 15/20
+ - 226s - loss: 0.7716 - accuracy: 0.7326 - val_loss: 0.9287 - val_accuracy: 0.6749
+Epoch 16/20
+ - 226s - loss: 0.7426 - accuracy: 0.7440 - val_loss: 0.9435 - val_accuracy: 0.6758
+Epoch 17/20
+ - 225s - loss: 0.7170 - accuracy: 0.7536 - val_loss: 0.8974 - val_accuracy: 0.6888
+Epoch 18/20
+ - 225s - loss: 0.6852 - accuracy: 0.7654 - val_loss: 0.9193 - val_accuracy: 0.6854
+Epoch 19/20
+ - 226s - loss: 0.6687 - accuracy: 0.7713 - val_loss: 0.9198 - val_accuracy: 0.6841
+Epoch 20/20
+ - 226s - loss: 0.6398 - accuracy: 0.7799 - val_loss: 0.9044 - val_accuracy: 0.6943
+Train loss:  0.6025841919231415
+Train accuracy:  0.7953799962997437
+Test loss:  0.9044036067962646
+Test accuracy:  0.6942999958992004
+Train time:  1:14:58.995972
+Train on 50000 samples, validate on 10000 samples
+Epoch 1/20
+ - 223s - loss: 1.8882 - accuracy: 0.3232 - val_loss: 1.6180 - val_accuracy: 0.4288
+Epoch 2/20
+ - 223s - loss: 1.5321 - accuracy: 0.4505 - val_loss: 1.4189 - val_accuracy: 0.4917
+Epoch 3/20
+ - 223s - loss: 1.3855 - accuracy: 0.5092 - val_loss: 1.3166 - val_accuracy: 0.5365
+Epoch 4/20
+ - 223s - loss: 1.2777 - accuracy: 0.5491 - val_loss: 1.2450 - val_accuracy: 0.5537
+Epoch 5/20
+ - 223s - loss: 1.1902 - accuracy: 0.5800 - val_loss: 1.1770 - val_accuracy: 0.5857
+Epoch 6/20
+ - 223s - loss: 1.1267 - accuracy: 0.6056 - val_loss: 1.1354 - val_accuracy: 0.5912
+Epoch 7/20
+ - 224s - loss: 1.0635 - accuracy: 0.6278 - val_loss: 1.0915 - val_accuracy: 0.6139
+Epoch 8/20
+ - 224s - loss: 1.0234 - accuracy: 0.6428 - val_loss: 1.0417 - val_accuracy: 0.6356
+Epoch 9/20
+ - 222s - loss: 0.9697 - accuracy: 0.6630 - val_loss: 1.0244 - val_accuracy: 0.6449
+Epoch 10/20
+ - 223s - loss: 0.9346 - accuracy: 0.6744 - val_loss: 1.0485 - val_accuracy: 0.6366
+Epoch 11/20
+ - 222s - loss: 0.8954 - accuracy: 0.6890 - val_loss: 0.9783 - val_accuracy: 0.6621
+Epoch 12/20
+ - 224s - loss: 0.8596 - accuracy: 0.7021 - val_loss: 0.9623 - val_accuracy: 0.6661
+Epoch 13/20
+ - 222s - loss: 0.8243 - accuracy: 0.7153 - val_loss: 0.9435 - val_accuracy: 0.6723
+Epoch 14/20
+ - 222s - loss: 0.7851 - accuracy: 0.7289 - val_loss: 0.9639 - val_accuracy: 0.6692
+Epoch 15/20
+ - 222s - loss: 0.7573 - accuracy: 0.7398 - val_loss: 0.9441 - val_accuracy: 0.6774
+Epoch 16/20
+ - 222s - loss: 0.7328 - accuracy: 0.7470 - val_loss: 0.9413 - val_accuracy: 0.6790
+Epoch 17/20
+ - 222s - loss: 0.6981 - accuracy: 0.7605 - val_loss: 0.9478 - val_accuracy: 0.6792
+Epoch 18/20
+ - 222s - loss: 0.6694 - accuracy: 0.7706 - val_loss: 0.9235 - val_accuracy: 0.6914
+Epoch 19/20
+ - 222s - loss: 0.6450 - accuracy: 0.7780 - val_loss: 0.9387 - val_accuracy: 0.6833
+Epoch 20/20
+ - 223s - loss: 0.6122 - accuracy: 0.7915 - val_loss: 0.9541 - val_accuracy: 0.6879
+Train loss:  0.5832625977516175
+Train accuracy:  0.7994999885559082
+Test loss:  0.9540994414329529
+Test accuracy:  0.6879000067710876
+Train time:  1:14:13.958566
