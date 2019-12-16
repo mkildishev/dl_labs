@@ -5,8 +5,7 @@
 # If you will create a folder for new lab, don't forget to include venv and .idea and another system
 # directories to .gitignore
 
-import keras
-import pydot as pyd
+
 from datetime import datetime
 from argparse import ArgumentParser
 from keras.engine.saving import model_from_json
@@ -18,8 +17,6 @@ from keras.datasets import cifar10
 from keras import optimizers
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
-from keras.utils import plot_model
-keras.utils.vis_utils.pydot = pyd
 
 
 def create_parser():
@@ -49,7 +46,6 @@ def second_model():
     network.add(BatchNormalization())
     network.add(layers.Dense(300, activation='relu', kernel_initializer='he_normal'))
     network.add(layers.Dense(10,  activation='softmax'))
-   # plot_model(network, rankdir='TB', to_file='test_keras_plot_model.png', show_shapes=True)
     return network
 
 
