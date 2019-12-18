@@ -8,8 +8,6 @@ import matplotlib.ticker as ticker
 def preprocessing_data(x_train, y_train, x_test, y_test):
     y_train_cat = to_categorical(y_train)
     y_test_cat = to_categorical(y_test)
-    x_train = x_train.reshape((50000, 32 * 32 * 3))
-    x_test = x_test.reshape((10000, 32 * 32 * 3))
     x_train_cat = x_train.astype('float32') / 255
     x_test_cat = x_test.astype('float32') / 255
     return (x_train_cat, y_train_cat), (x_test_cat, y_test_cat)
