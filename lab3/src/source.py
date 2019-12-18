@@ -4,8 +4,6 @@
 # PLEASE, PAY ATTENTION!
 # If you will create a folder for new lab, don't forget to include venv and .idea and another system
 # directories to .gitignore
-import keras
-import pydotplus
 
 from datetime import datetime
 from argparse import ArgumentParser
@@ -16,7 +14,6 @@ from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout, LeakyReL
 from keras.optimizers import SGD
 from keras.utils import to_categorical
 from keras.datasets import cifar10
-import tensorflow as tf
 
 
 def create_parser():
