@@ -1,24 +1,19 @@
-# A little introductory for you, folks.
-# We are writing a program to solve multi-classification problem
-# https://www.kaggle.com/c/cifar-10/overview dataset from here
-# PLEASE, PAY ATTENTION!
-# If you will create a folder for new lab, don't forget to include venv and .idea and another system
-# directories to .gitignore
 
-
-from src.models import *
-from src.utils import *
+from models import *
+from utils import *
 from datetime import datetime
 from argparse import ArgumentParser
+from keras.utils import plot_model
 from keras.engine.saving import model_from_json
 from keras.datasets import cifar10
+
 
 
 def create_parser():
     parser = ArgumentParser()
     parser.add_argument('--mode', type=str, choices=['load', 'fit', 'fit_all'], default='fit_all',
                         help='Choosing work mode')
-    parser.add_argument('--model', type=str,  default='1',
+    parser.add_argument('--model', type=str,  default='2',
                         help='Model type')
     parser.add_argument('--batch_size', type=int, default=128,
                         help='Sample batch size')
@@ -59,11 +54,12 @@ def fit_and_run(model=first_model, name="model", batch_size=128, rate=0.1, epoch
     history = network.fit(x_train, y_train, validation_data=(x_test, y_test), epochs=epochs,
                           batch_size=batch_size,  verbose=2)
     delta_time = datetime.now() - time_start
-    save_comparision_plot(history.history['accuracy'], history.history['val_accuracy'], 'Accuracy',
+    save_comparision_plot(history.history['acc'], history.history['val_acc'], 'Accuracy',
                           name, 'Network accuracy')
     save_comparision_plot(history.history['loss'], history.history['val_loss'], 'Loss',
                           name, 'Network loss')
     save_network(network, name)
+    plot_model(network, build_name_for_obj('.png', '/models/', name), show_shapes=True, dpi=200)
     score_train = network.evaluate(x_train, y_train, verbose=0)
     score_test = network.evaluate(x_test, y_test, verbose=0)
     print_info(delta_time, score_train, score_test)
