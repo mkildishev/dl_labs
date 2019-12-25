@@ -163,6 +163,7 @@ def tenth_model():
 
 def eleventh_model():
     network = Sequential()
+    network.add(BatchNormalization())
     network.add(Conv2D(32, (3, 3), activation='tanh',
                        kernel_initializer='he_uniform', padding='same', input_shape=(32, 32, 3)))
     network.add(Conv2D(32, (3, 3), activation='tanh', kernel_initializer='he_uniform', padding='same'))
@@ -174,7 +175,7 @@ def eleventh_model():
     network.add(Flatten())
     network.add(Dense(128, activation='relu', kernel_initializer='he_uniform'))
     network.add(Dense(10, activation='softmax'))
-    optimizer = SGD(lr=0.1, decay=1e-2/20,  momentum=0.9)
+    optimizer = SGD(lr=0.1,  momentum=0.9)
     network.compile(optimizer=optimizer, loss='categorical_crossentropy', metrics=['accuracy'])
     return network
 

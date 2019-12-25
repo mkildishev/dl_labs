@@ -16,9 +16,9 @@ from keras.datasets import cifar10
 
 def create_parser():
     parser = ArgumentParser()
-    parser.add_argument('--mode', type=str, choices=['load', 'fit', 'fit_all'], default='fit_all',
+    parser.add_argument('--mode', type=str, choices=['load', 'fit', 'fit_all'], default='fit',
                         help='Choosing work mode')
-    parser.add_argument('--model', type=str,  default='1',
+    parser.add_argument('--model', type=str,  default='11',
                         help='Model type')
     parser.add_argument('--batch_size', type=int, default=128,
                         help='Sample batch size')
